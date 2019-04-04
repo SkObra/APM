@@ -78,13 +78,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button_Save = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button_StoredData = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
             this.button_Find = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox_Find = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button_StoredData = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label20 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.add_appointmentBtn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl_Miscellaneous.SuspendLayout();
             this.tabPage_Maintenance.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -92,6 +101,7 @@
             this.Service.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl_Miscellaneous
@@ -592,6 +602,16 @@
             this.tabPage1.Text = "Data";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button_StoredData
+            // 
+            this.button_StoredData.Location = new System.Drawing.Point(324, 28);
+            this.button_StoredData.Name = "button_StoredData";
+            this.button_StoredData.Size = new System.Drawing.Size(132, 23);
+            this.button_StoredData.TabIndex = 66;
+            this.button_StoredData.Text = "Display Stored data";
+            this.button_StoredData.UseVisualStyleBackColor = true;
+            this.button_StoredData.Click += new System.EventHandler(this.button_StoredData_Click);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -639,6 +659,15 @@
             // tabPage2
             // 
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.listView1);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.monthCalendar1);
+            this.tabPage2.Controls.Add(this.add_appointmentBtn);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.listBox1);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -647,15 +676,95 @@
             this.tabPage2.Text = "Miscellaneous";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button_StoredData
+            // button4
             // 
-            this.button_StoredData.Location = new System.Drawing.Point(324, 28);
-            this.button_StoredData.Name = "button_StoredData";
-            this.button_StoredData.Size = new System.Drawing.Size(132, 23);
-            this.button_StoredData.TabIndex = 66;
-            this.button_StoredData.Text = "Display Stored data";
-            this.button_StoredData.UseVisualStyleBackColor = true;
-            this.button_StoredData.Click += new System.EventHandler(this.button_StoredData_Click);
+            this.button4.Location = new System.Drawing.Point(496, 107);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Refresh";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(319, 306);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(326, 126);
+            this.listView1.TabIndex = 7;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(315, 270);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(106, 19);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Choose a date";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.monthCalendar1.Location = new System.Drawing.Point(38, 270);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 5;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // add_appointmentBtn
+            // 
+            this.add_appointmentBtn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_appointmentBtn.Location = new System.Drawing.Point(626, 70);
+            this.add_appointmentBtn.Name = "add_appointmentBtn";
+            this.add_appointmentBtn.Size = new System.Drawing.Size(140, 30);
+            this.add_appointmentBtn.TabIndex = 4;
+            this.add_appointmentBtn.Text = "Add appointment";
+            this.add_appointmentBtn.UseVisualStyleBackColor = true;
+            this.add_appointmentBtn.Click += new System.EventHandler(this.add_appointmentBtn_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(496, 70);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 30);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Preview Letter";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 19;
+            this.listBox1.Location = new System.Drawing.Point(7, 70);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(482, 99);
+            this.listBox1.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(71, 222);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(177, 19);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Upcoming appointments";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(71, 37);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(146, 19);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Expected Check-ups";
             // 
             // Form_Navigation
             // 
@@ -675,6 +784,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -738,5 +849,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.Button button_StoredData;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button add_appointmentBtn;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button4;
     }
 }

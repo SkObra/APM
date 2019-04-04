@@ -17,20 +17,37 @@ namespace APM
         /*string ConStr = Properties.Settings.Default.APM_DatabaseConnectionString;
         SqlConnection APM_C = new SqlConnection(ConStr);*/
      
-        SqlConnection APM_C = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rpear\Documents\sK_oBrA\UOD\UnderGraduate\Year 2\Semester2\Team Project\Appointment Manager\Version0.3\APM\APM\APM_Database.mdf;Integrated Security=True");
+        SqlConnection APM_C = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\APM_Database.mdf;Integrated Security=True");
         
         public Form_Navigation()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            Extract_Appointments();
         }
         
   
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
-        
+        private void Extract_Appointments()
+        {
+            APM_C.Open();
+            string qr = "select * from Appointments";
+            SqlCommand DateCommand = new SqlCommand(qr, APM_C);
+            SqlDataReader reader = DateCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                Appointment app = new Appointment();
+                app.CustomerID = reader["fkCustomerID"].ToString();
+                app.CustomerName = reader["CustomerName"].ToString();
+                app.Date = Convert.ToDateTime(reader["appointmentDate"].ToString());
+                app.details = reader["Details"].ToString();
+                appointments.Add(app);
+            }
+            APM_C.Close();
+        }
         private void button_Save_Click(object sender, EventArgs e)
         {         
             try
@@ -72,7 +89,8 @@ namespace APM
                 SqlCommand Command3 = new SqlCommand();
                 Command3.Connection = APM_C;
                 Command3.CommandType = CommandType.Text;
-                Command3.CommandText = "insert into [Service] (ServiceID, DateS, Fault, Mechanic, CarID) values ('" + textBox_Sv.Text + "', '" + textBox_DP.Text + "','" + textBox_FL.Text + "', '" + textBox_MA.Text + "', '" + textBox_CI.Text + "')";
+                string pickedDate = textBox_DP.Value.ToShortDateString()  ;
+                Command3.CommandText = "insert into [Service] (ServiceID, DateS, Fault, Mechanic, CarID) values ('" + textBox_Sv.Text + "', '" + pickedDate + "','" + textBox_FL.Text + "', '" + textBox_MA.Text + "', '" + textBox_CI.Text + "')";
                 Command3.ExecuteNonQuery();
                 Command3.Parameters.Clear();
                 
@@ -130,6 +148,85 @@ namespace APM
         private void button_StoredData_Click(object sender, EventArgs e)
         {
             dataLoader();
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadMiscellaneousListBox()
+        {
+            APM_C.Open();
+            string qr = "select Service.ServiceID, Service.DateS, CustomerV.CarID, CustomerV.fkCustomerID as CustomerID, CustomerP.Name from Service, CustomerV, CustomerP where" +
+                "(Service.DateS < (SELECT CONVERT(VARCHAR(10), (SELECT DATEADD(DD,-30,GETDATE())),101)))  AND  (Service.CarID = CustomerV.CarID) " +
+                "AND (CustomerV.fkCustomerID = CustomerP.CustomerID) ";
+            SqlCommand DateCommand = new SqlCommand(qr, APM_C);
+            SqlDataReader reader = DateCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                Customer cust = new Customer();
+                cust.CustomerID = reader["CustomerID"].ToString();
+                cust.FullName = reader["Name"].ToString();
+                cust.CarID = reader["CarID"].ToString();
+                cust.lastService = Convert.ToDateTime(reader["DateS"].ToString());
+                //cust.CarPlate = reader["LicensePlateID"].ToString();
+                listBox1.Items.Add(cust); 
+               // Customers.Add(cust);
+
+            }
+            APM_C.Close();
+            
+        }
+
+        private List<Appointment> appointments = new List<Appointment>();
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateTime date = monthCalendar1.SelectionStart;
+            label20.Text = date.ToShortDateString();
+            listView1.Items.Clear();
+            
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if (date.ToShortDateString() == appointments[i].Date.ToShortDateString())
+                {
+                    listView1.BeginUpdate();
+                    listView1.Items.Add(appointments[i].CustomerID + " " + appointments[i].CustomerName + " , Last Service: " + appointments[i].Date.ToShortDateString());
+                    listView1.EndUpdate();
+                }
+            }
+            
+                                   
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoadMiscellaneousListBox();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Customer selectedCustomer = (Customer)listBox1.SelectedItem;
+            string message = "Letter for " + selectedCustomer.FullName + ", CustomerID: " + selectedCustomer.CustomerID;
+            string title = "Letter for Customer ";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            
+        }
+
+        private static Customer selectedCustomer = new Customer();
+
+        internal static Customer SelectedCustomer { get => selectedCustomer; set => selectedCustomer = value; }
+       
+
+        private void add_appointmentBtn_Click(object sender, EventArgs e)
+        {
+          
+            selectedCustomer = (Customer)listBox1.SelectedItem;
+            Appointment_Info new_appointment = new Appointment_Info();
+            new_appointment.Show();
+            
         }
     }
 }

@@ -62,6 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment.cs" />
+    <Compile Include="Appointment_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment_Info.Designer.cs">
+      <DependentUpon>Appointment_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs" />
     <Compile Include="Form_Authentication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +85,9 @@
     <Compile Include="Mods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Appointment_Info.resx">
+      <DependentUpon>Appointment_Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Authentication.resx">
       <DependentUpon>Form_Authentication.cs</DependentUpon>
     </EmbeddedResource>
