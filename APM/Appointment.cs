@@ -12,10 +12,9 @@ namespace APM
         public string CustomerName;
         public DateTime Date;
         public string details;
-
         public override string ToString()
         {
-            return CustomerID + " " + CustomerName + " " + Date.ToString();
+            return CustomerName + " " + Date.ToString();
         }
     }
 }

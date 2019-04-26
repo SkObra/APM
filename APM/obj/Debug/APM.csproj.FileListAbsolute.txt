@@ -12,3 +12,31 @@ C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.csproj.CoreCompileI
 C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.exe
 C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.pdb
 C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.Appointment_Info.resources
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\bin\Debug\APM_Database.mdf
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\bin\Debug\APM_Database_log.ldf
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\bin\Debug\APM.exe.config
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\bin\Debug\APM.exe
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\bin\Debug\APM.pdb
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.csprojAssemblyReference.cache
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.Appointment_Info.resources
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.Form_Authentication.resources
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.Form_Navigation.resources
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.Properties.Resources.resources
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.csproj.GenerateResource.cache
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.csproj.CoreCompileInputs.cache
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.exe
+D:\University\Year 2\Team Project\APM-ioanniscosti-patch-1\APM-ioanniscosti-patch-1\APM\obj\Debug\APM.pdb
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\bin\Debug\APM_Database.mdf
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\bin\Debug\APM_Database_log.ldf
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\bin\Debug\APM.exe.config
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\bin\Debug\APM.exe
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\bin\Debug\APM.pdb
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.csprojAssemblyReference.cache
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.Appointment_Info.resources
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.Form_Authentication.resources
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.Form_Navigation.resources
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.Properties.Resources.resources
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.csproj.GenerateResource.cache
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.csproj.CoreCompileInputs.cache
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.exe
+D:\University\Year 2\Team Project\APM-Miscellaneous\APM-analopes-patch-1\APM\obj\Debug\APM.pdb

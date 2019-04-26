@@ -23,7 +23,6 @@ namespace APM
         {
 
         }
-
         public override string ToString()
         {
             return FullName +" and their last service is :" + lastService.ToShortDateString() ;
