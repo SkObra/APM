@@ -85,7 +85,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox_Find = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.refresh = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label20 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -659,7 +659,7 @@
             // tabPage2
             // 
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.refresh);
             this.tabPage2.Controls.Add(this.listView1);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.monthCalendar1);
@@ -676,15 +676,15 @@
             this.tabPage2.Text = "Miscellaneous";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // refresh
             // 
-            this.button4.Location = new System.Drawing.Point(496, 107);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Refresh";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.refresh.Location = new System.Drawing.Point(496, 107);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(75, 23);
+            this.refresh.TabIndex = 8;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // listView1
             // 
@@ -694,6 +694,7 @@
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -857,6 +858,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button refresh;
     }
 }

@@ -22,7 +22,7 @@ namespace APM
         public Form_Navigation()
         {
             InitializeComponent();
-            Extract_Appointments();
+            
         }
         
   
@@ -33,6 +33,7 @@ namespace APM
 
         private void Extract_Appointments()
         {
+            appointments.Clear();
             APM_C.Open();
             string qr = "select * from Appointments";
             SqlCommand DateCommand = new SqlCommand(qr, APM_C);
@@ -154,6 +155,7 @@ namespace APM
         {
 
         }
+        private List<Customer> Customers = new List<Customer>();
 
         private void LoadMiscellaneousListBox()
         {
@@ -183,6 +185,7 @@ namespace APM
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            Extract_Appointments();
             DateTime date = monthCalendar1.SelectionStart;
             label20.Text = date.ToShortDateString();
             listView1.Items.Clear();
@@ -192,7 +195,7 @@ namespace APM
                 if (date.ToShortDateString() == appointments[i].Date.ToShortDateString())
                 {
                     listView1.BeginUpdate();
-                    listView1.Items.Add(appointments[i].CustomerID + " " + appointments[i].CustomerName + " , Last Service: " + appointments[i].Date.ToShortDateString());
+                    listView1.Items.Add(appointments[i].ToString()/*.CustomerID + " " + appointments[i].CustomerName + " , Last Service: " + appointments[i].Date.ToShortDateString()*/);
                     listView1.EndUpdate();
                 }
             }
@@ -200,8 +203,9 @@ namespace APM
                                    
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Refresh_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             LoadMiscellaneousListBox();
         }
 
@@ -226,7 +230,18 @@ namespace APM
             selectedCustomer = (Customer)listBox1.SelectedItem;
             Appointment_Info new_appointment = new Appointment_Info();
             new_appointment.Show();
+          
             
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = listView1.SelectedItems[0].Text;
+            string custID = str.Split(' ')[0];
+            string message = custID;
+            string title = "Caution!";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result = MessageBox.Show(message, title, buttons);
         }
     }
 }
