@@ -16,13 +16,14 @@ namespace APM
     {
         /*string ConStr = Properties.Settings.Default.APM_DatabaseConnectionString;
         SqlConnection APM_C = new SqlConnection(ConStr);*/
-     
-        SqlConnection APM_C = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\University\Year 2\Team Project\APM-Miscellaneous\APM\APM_Database.mdf;Integrated Security=True");
-        
+        public static string connectionString = ("Data Source='172.18.39.133, 1433';Initial Catalog=APM_DB;Persist Security Info=True;User ID=sa;Password=Intelcorei21*");
+        SqlConnection APM_C = new SqlConnection(connectionString);
+        DataTable tableInformation = new DataTable();
+
         public Form_Navigation()
         {
             InitializeComponent();
-            Extract_Appointments();
+            //Extract_Appointments();
         }
         
   
@@ -30,7 +31,7 @@ namespace APM
         {
            
         }
-
+        /*
         private void Extract_Appointments()
         {
             APM_C.Open();
@@ -47,7 +48,7 @@ namespace APM
                 appointments.Add(app);
             }
             APM_C.Close();
-        }
+        }*/
         private void button_Save_Click(object sender, EventArgs e)
         {         
             try
@@ -121,16 +122,27 @@ namespace APM
 
         public void dataLoader()
         {
-            APM_C.Open();
-            SqlCommand commandLoad = APM_C.CreateCommand();
-            commandLoad.CommandType = CommandType.Text;
-            commandLoad.CommandText = "Select * from CustomerP, CustomerV, Service, Invoice";
-            commandLoad.ExecuteNonQuery();
-            DataTable tableInformation = new DataTable();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(commandLoad);
-            dataAdapter.Fill(tableInformation);
-            dataGridView1.DataSource = tableInformation;
-            APM_C.Close();
+            try
+            {
+                if (APM_C.State == ConnectionState.Closed)
+                {
+                    APM_C.Open();
+                }
+
+                SqlCommand commandLoad = APM_C.CreateCommand();
+                commandLoad.CommandType = CommandType.Text;
+                commandLoad.CommandText = "Select * From CustomerP, CustomerV, Service, Invoice where CustomerP.CustomerID = CustomerV.fkCustomerID AND CustomerV.CarID = Service.CarID AND Service.ServiceID = Invoice.ServiceID";
+                commandLoad.ExecuteNonQuery();
+                DataTable tableInformation = new DataTable();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(commandLoad);
+                dataAdapter.Fill(tableInformation);
+                dataGridView1.DataSource = tableInformation;
+                APM_C.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button_Logout_Click(object sender, EventArgs e)
@@ -227,6 +239,54 @@ namespace APM
             Appointment_Info new_appointment = new Appointment_Info();
             new_appointment.Show();
             
+        }
+
+        private void button_Refresh_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure?";
+            string title = "Do you want to refresh?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                this.Controls.Clear();
+                this.InitializeComponent();
+            }
+        }
+
+        private void button_Find_Click(object sender, EventArgs e)
+        {
+            string findQuery = "select * from CustomerP, CustomerV, Service, Invoice where CustomerP.Name='" + textBox_Find.Text + "' AND CustomerP.CustomerID = CustomerV.fkCustomerID AND CustomerV.CarID = Service.CarID AND Service.ServiceID = Invoice.ServiceID";
+            APM_C.Open();
+            SqlCommand findCommand = new SqlCommand(findQuery, APM_C);
+            SqlDataAdapter findAdapter = new SqlDataAdapter(findCommand);
+            DataTable dataFind = new DataTable();
+            findAdapter.Fill(dataFind);
+            dataGridView1.DataSource = dataFind;
+            APM_C.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*DataTable tableInformation = new DataTable();
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            dataGridView1.Rows.RemoveAt(rowIndex);*/
+
+            try
+            {
+                if (APM_C.State == ConnectionState.Closed)
+                {
+                    APM_C.Open();
+                }
+                string Query = "Delete from Invoice WHERE ServiceID = '" + dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + "'";
+                SqlCommand cmd = new SqlCommand(Query, APM_C);
+                cmd.ExecuteNonQuery();
+                APM_C.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

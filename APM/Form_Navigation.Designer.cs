@@ -94,6 +94,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.button_refresh = new System.Windows.Forms.Button();
             this.tabControl_Miscellaneous.SuspendLayout();
             this.tabPage_Maintenance.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -123,6 +124,7 @@
             // tabPage_Maintenance
             // 
             this.tabPage_Maintenance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage_Maintenance.Controls.Add(this.button_refresh);
             this.tabPage_Maintenance.Controls.Add(this.button_Logout);
             this.tabPage_Maintenance.Controls.Add(this.tabControl1);
             this.tabPage_Maintenance.Controls.Add(this.button_Save);
@@ -622,6 +624,7 @@
             this.button1.TabIndex = 65;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button_Update
             // 
@@ -641,6 +644,7 @@
             this.button_Find.TabIndex = 2;
             this.button_Find.Text = "Find";
             this.button_Find.UseVisualStyleBackColor = true;
+            this.button_Find.Click += new System.EventHandler(this.button_Find_Click);
             // 
             // dataGridView1
             // 
@@ -767,6 +771,18 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "Expected Check-ups";
             // 
+            // button_refresh
+            // 
+            this.button_refresh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button_refresh.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_refresh.Location = new System.Drawing.Point(681, -2);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(75, 23);
+            this.button_refresh.TabIndex = 68;
+            this.button_refresh.Text = "Refresh";
+            this.button_refresh.UseVisualStyleBackColor = true;
+            this.button_refresh.Click += new System.EventHandler(this.button_Refresh_Click);
+            // 
             // Form_Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -859,5 +875,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_refresh;
     }
 }

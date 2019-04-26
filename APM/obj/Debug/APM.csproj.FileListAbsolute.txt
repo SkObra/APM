@@ -54,3 +54,17 @@ C:\Users\Samsung\Desktop\test3\APM-Miscellaneous\APM\obj\Debug\APM.csproj.Genera
 C:\Users\Samsung\Desktop\test3\APM-Miscellaneous\APM\obj\Debug\APM.csproj.CoreCompileInputs.cache
 C:\Users\Samsung\Desktop\test3\APM-Miscellaneous\APM\obj\Debug\APM.exe
 C:\Users\Samsung\Desktop\test3\APM-Miscellaneous\APM\obj\Debug\APM.pdb
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\bin\Debug\APM_Database.mdf
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\bin\Debug\APM_Database_log.ldf
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\bin\Debug\APM.exe.config
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\bin\Debug\APM.exe
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\bin\Debug\APM.pdb
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.Appointment_Info.resources
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.Form_Authentication.resources
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.Form_Navigation.resources
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.Properties.Resources.resources
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.csproj.GenerateResource.cache
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.csproj.CoreCompileInputs.cache
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.exe
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.pdb
+C:\Users\Samsung\Desktop\test5\APM-lilicovileac-test\APM\obj\Debug\APM.csprojAssemblyReference.cache
