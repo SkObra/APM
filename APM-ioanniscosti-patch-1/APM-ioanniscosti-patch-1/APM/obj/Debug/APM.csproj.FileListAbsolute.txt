@@ -1,0 +1,14 @@
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\bin\Debug\APM_Database.mdf
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\bin\Debug\APM_Database_log.ldf
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\bin\Debug\APM.exe.config
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\bin\Debug\APM.exe
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\bin\Debug\APM.pdb
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.csprojAssemblyReference.cache
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.Form_Authentication.resources
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.Form_Navigation.resources
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.Properties.Resources.resources
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.csproj.GenerateResource.cache
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.csproj.CoreCompileInputs.cache
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.exe
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.pdb
+C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\obj\Debug\APM.Appointment_Info.resources
