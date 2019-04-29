@@ -13,7 +13,9 @@ namespace APM
 {
     public partial class Appointment_Info : Form
     {
-        SqlConnection APM_C = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\APM_Database.mdf;Integrated Security=True");
+        public static bool appointment_set = false;
+        // SqlConnection APM_C = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samsung\Desktop\APM-Miscellaneous\APM\APM_Database.mdf;Integrated Security=True");
+        SqlConnection APM_C = Form_Navigation.APM_C;
         private Customer selectedCustomer = Form_Navigation.SelectedCustomer;
         public Appointment_Info()
         {
@@ -40,6 +42,8 @@ namespace APM
             appointmentCommand.ExecuteNonQuery();
             appointmentCommand.Parameters.Clear();
             APM_C.Close();
+            appointment_set = true;
+
 
             string message = "Appointment added on the " + pickedDate;
             string title = "Appointment! ";

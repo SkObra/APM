@@ -30,6 +30,7 @@
         {
             this.tabControl_Miscellaneous = new System.Windows.Forms.TabControl();
             this.tabPage_Maintenance = new System.Windows.Forms.TabPage();
+            this.button_refresh = new System.Windows.Forms.Button();
             this.button_Logout = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Customer = new System.Windows.Forms.TabPage();
@@ -94,7 +95,6 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.button_refresh = new System.Windows.Forms.Button();
             this.tabControl_Miscellaneous.SuspendLayout();
             this.tabPage_Maintenance.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -136,6 +136,18 @@
             this.tabPage_Maintenance.TabIndex = 0;
             this.tabPage_Maintenance.Text = "Maintenance";
             this.tabPage_Maintenance.UseVisualStyleBackColor = true;
+            // 
+            // button_refresh
+            // 
+            this.button_refresh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button_refresh.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_refresh.Location = new System.Drawing.Point(681, -2);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(75, 23);
+            this.button_refresh.TabIndex = 68;
+            this.button_refresh.Text = "Refresh";
+            this.button_refresh.UseVisualStyleBackColor = true;
+            this.button_refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
             // button_Logout
             // 
@@ -635,6 +647,7 @@
             this.button_Update.TabIndex = 64;
             this.button_Update.Text = "Update";
             this.button_Update.UseVisualStyleBackColor = true;
+            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
             // 
             // button_Find
             // 
@@ -653,6 +666,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(770, 461);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBox_Find
             // 
@@ -699,6 +713,7 @@
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -737,7 +752,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(123, 30);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Preview Letter";
+            this.button2.Text = "Send Email";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -770,18 +785,6 @@
             this.label17.Size = new System.Drawing.Size(142, 27);
             this.label17.TabIndex = 0;
             this.label17.Text = "Expected Check-ups";
-            // 
-            // button_refresh
-            // 
-            this.button_refresh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button_refresh.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_refresh.Location = new System.Drawing.Point(681, -2);
-            this.button_refresh.Name = "button_refresh";
-            this.button_refresh.Size = new System.Drawing.Size(75, 23);
-            this.button_refresh.TabIndex = 68;
-            this.button_refresh.Text = "Refresh";
-            this.button_refresh.UseVisualStyleBackColor = true;
-            this.button_refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
             // Form_Navigation
             // 

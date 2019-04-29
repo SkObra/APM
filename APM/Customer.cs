@@ -10,10 +10,12 @@ namespace APM
     {
         public string CustomerID;
         public string FullName;
+        public string Title;
         public string CarType;
+        public string CarModel;
         public string CarID;
         public string CarPlate;
-        public string ContactChoice;
+        public string Email;
 
         public DateTime lastService;
         public DateTime AppointmentDate;
